@@ -1,0 +1,71 @@
+body {
+  padding-top: 54px;
+  font-family: 'Arvo', serif;
+  background-image: url(../img/bg2.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-color: black;
+  color: black;
+}
+
+.navbar {
+  background-color: black;
+}
+.mybtn {
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+}
+
+.allmatchstyle {
+  padding:1em 1em 0 1em;
+  color:white;
+  background-color: transparent;
+}
+
+.allmatchmain {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 7px;
+  height: auto;
+  margin-top: 2em;
+  color: white;
+  text-align: center
+}
+.details{
+  margin-top: 2em;
+  }
+
+.myheading{
+  background-color: black;
+  padding: 0.7em;
+}
+.btnres{
+  white-space: normal;
+}
+
+.backbtn {
+  margin-bottom:1em;
+  border: 1px solid white;
+  white-space: normal;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+@media (max-width:1000px){
+  .allmatchstyle{
+    padding:1em 0 1em 0;
+    }
+
+}
+
+@media only screen and (max-width:315px){
+  .mybtn{
+    margin-top: 15px;
+  }
+}

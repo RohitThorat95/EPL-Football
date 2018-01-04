@@ -1,0 +1,84 @@
+<!-- Sorts -->
+<div class="container  allmatchstyle">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="form-group">
+            <label>Sort By Year:</label>
+            <select class="form-control" ng-model="year" ng-change="getAllMatch()">
+                <option value="2015">2015-16</option>
+                <option value="2016">2016-17</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="form-group">
+           <label>Sort By Team :</label>
+           <select class="form-control" ng-model="team" ng-change="getAllMatch()">
+               <option value="Sunderland">Sunderland</option>
+               <option value="Aston Villa">Aston Villa</option>
+               <option value="Burnley">Burnley</option>
+               <option value="Hull City">Hull City</option>
+               <option value="Middlesbrough">Middlesbrough</option>
+               <option value="Swansea">Swansea</option>
+               <option value="Chelsea">Chelsea</option>
+               <option value="Watford">Watford</option>
+               <option value="Crystal Palace">Crystal Palace</option>
+               <option value="Everton">Everton</option>
+               <option value="Bournemouth">Bournemouth</option>
+               <option value="West Bromwich Albion">West Bromwich Albion</option>
+               <option value="Newcastle United">Newcastle United</option>
+               <option value="Norwich">Norwich</option>
+               <option value="Leicester City">Leicester City</option>
+               <option value="Arsenal">Arsenal</option>
+               <option value="Manchester City">Manchester City</option>
+               <option value="Tottenham Hotspur">Tottenham Hotspur</option>
+               <option value="Manchester United">Manchester United</option>
+               <option value="Southampton">Southampton</option>
+               <option value="Liverpool">Liverpool</option>
+               <option value="West Ham United">West Ham United</option>
+               <option value="Stoke City">Stoke City</option>
+           </select>
+       </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+        <div class="form-group">
+            <label>Score:</label>
+            <input type="number"  class="form-control" ng-model="score" min="0" max="5">
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- tables -->
+<div class="container allmatchmain">
+    <div class="row">
+      <div class="col align-self-center">
+        <div class="details" ng-repeat="details in allMatch.rounds">
+          <h4 class="myheading">{{details.name}}</h4>
+          <div class="table-responsive">
+            <table class="table table-dark table-bordered">
+              <thead>
+                <tr>
+                  <th>Team 1</th>
+                  <th>Team 2</th>
+                  <th>Match Played on</th>
+                  <th>Scores</th>
+                  <th>Match Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Filters with arguments -->
+                <tr ng-repeat="match in details.matches | teamFilter:team | scoreFilter:score">
+                  <td>{{match.team1.name}}</td>
+                  <td>{{match.team2.name}}</td>
+                  <td>{{match.date | date}}</td>
+                  <td>{{match.score1}}-{{match.score2}}</td>
+                  <td><a href="#/matchdetails/{{details.name}}/{{match}}"><button class="btn btn-success btnres">Show Match Details</button></a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

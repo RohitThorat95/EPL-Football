@@ -1,0 +1,42 @@
+<div class="container allmatchstyle">
+  <div class="row">
+    <div class="col text-center">
+      <div class="form-group">
+        <label>Sort By year :</label>
+        <select class="form-control" ng-model="year" ng-change="getStats()">
+          <option value="2015">2015-16</option>
+          <option value="2016">2016-17</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container allmatchmain" style="margin-bottom:2em;">
+   <div>
+     <h3 class="myheading" style="margin-top:1em;">Statistics</h3>
+   </div>
+
+   <div class="table-responsive">
+     <table class="table table-dark table-bordered">
+       <thead>
+         <tr>
+           <td>Team</td>
+           <td>Matches Played</td>
+           <td>Goals</td>
+           <td>Won</td>
+           <td>Lost</td>
+         </tr>
+       </thead>
+       <tbody>
+         <tr ng-repeat="x in teamStats">
+           <td>{{x.name}}</td>
+           <td>{{x.played}}</td>
+           <td>{{x.goals}}</td>
+           <td>{{x.won}}</td>
+           <td>{{x.lost}}</td>
+         </tr>
+       </tbody>
+     </table>
+   </div>
+</div>
